@@ -1,0 +1,4 @@
+name = PS Random Logo
+description = On each page load chooses a random image and uses it for the header image.
+core = 7.x
+version 7.x-1.0

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * provide a random number
+ *
+ */
+function pslogo_preprocess(&$variables) {
+    
+    //generate random number based on number of files in logos directory
+    //todo count number of images in directory so that max is a $variable.
+    $x = rand(1,4);
+
+    $theme_name = 'professionalstandards_omega';
+    $var_name = 'theme_' . $theme_name . '_settings';
+
+    $settings = variable_get($var_name, array());
+    
+    $new_path = drupal_get_path('module', 'pslogo') .'/logos/mast'.$x.'.jpg';
+
+    $settings['logo_path'] = $new_path;
+
+    variable_set($var_name, $settings);
+
+    
+}
